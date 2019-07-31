@@ -2,13 +2,6 @@ import os
 from app import app
 from flask import render_template, request, redirect
 
-events = [
-        {"event":"First Day of Classes", "date":"2019-08-21"},
-        {"event":"Winter Break", "date":"2019-12-20"},
-        {"event":"Finals Begin", "date":"2019-12-01"}
-    ]
-
-
 # from flask_pymongo import PyMongo
 
 # name of database
@@ -26,7 +19,7 @@ events = [
 @app.route('/index')
 
 def index():
-    return render_template('index.html', events = events)
+    return render_template('index.html')
 
 
 # CONNECT TO DB, ADD DATA
@@ -40,3 +33,8 @@ def add():
 
     # return a message to the user
     return ""
+    
+@app.route('/womens')
+
+def womens():
+    return render_template("womens.html")
